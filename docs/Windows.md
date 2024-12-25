@@ -25,7 +25,7 @@ compile the project
 dotnet publish
 ```
 
-in /bin/Release/net8.0 edit the config.json change the `database_password` to the password you set, and the `database_name` to the database you created. also edit `BotToken` and `ChannelId` if you want to use the discord bot
+in /bin/Release/net8.0 edit the config.json change the `mysql_password` to the password you set, and the `mysql_database` to the database you created. also edit `BotToken` and `ChannelId` if you want to use the discord bot
 
 cd to the binary
 cd bin\Release\net8.0

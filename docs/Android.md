@@ -10,20 +10,16 @@ termux-setup-storage
 ```
 pkg update && pkg upgrade
 ```
-4: install glibc
+4: install glibc and mariadb
 ```
-apt install glibc-repo wget
+apt install glibc-repo wget mariadb
 apt install glibc-runner libicu-glibc
 ```
-5: install mariadb
+5: start mariadb
 ```
-pkg install mariadb
+mariadbd-safe --datadir='/data/data/com.termux/files/usr/var/lib/mysql'
 ```
-6: start mariadb
-```
-cd '/data/data/com.termux/files/usr' ; /data/data/com.termux/files/usr/bin/mariadbd-safe --datadir='/data/data/com.termux/files/usr/var/lib/mysql'
-```
-7: create new terminal sessions and run [mariadb-secure-installation](https://mariadb.com/kb/en/mariadb-secure-installation/)
+6: create new terminal sessions and run [mariadb-secure-installation](https://mariadb.com/kb/en/mariadb-secure-installation/)
 ```
 '/data/data/com.termux/files/usr/bin/mariadb-secure-installation'
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
@@ -88,12 +84,11 @@ installation should now be secure.
 
 Thanks for using MariaDB!
 ```
-8: start glibc runner
+7: start glibc runner
 ```
-cd ~
 grun -s
 ```
-9: Download dotnet and install 
+8: Download dotnet and install 
 ```
 wget https://download.visualstudio.microsoft.com/download/pr/501c5677-1a80-4232-9223-2c1ad336a304/867b5afc628837835a409cf4f465211d/dotnet-runtime-8.0.11-linux-arm64.tar.gz
 mkdir .dotnet
@@ -101,21 +96,21 @@ tar xvf dotnet-runtime-8.0.11-linux-arm64.tar.gz -C .dotnet
 grun -f .dotnet/dotnet
 grun -c .dotnet/dotnet
 ```
-10: Unzip Server
+9: Unzip Server
 ```
 mkdir Server
 cd Server
 unzip "zip directory"
 unzip Supercell.Laser.Server.1.0.0.zip
 ```
-11: mariadb shell
+10: mariadb shell
 ```
 mariadb -u root -p
 Enter password: root password
 CREATE DATABASE databasename;
 exit;
 ```
-12: import [database.sql](../database.sql)
+11: import [database.sql](../database.sql)
 ```
 wget https://github.com/Erder00/royale-brawl-v29/raw/refs/heads/main/database.sql
 ```
@@ -129,16 +124,16 @@ Enter password: root password
 source database.sql
 exit;
 ```
-13: change config.json
+12: change config.json
 ```
 nano config.json
 ```
-change the database_password to the password you set, and the database_name to the database you created. 
+change the mysql_password to the password you set, and the mysql_database to the database you created. 
 Control + x and y and Enter x2
 ### Run 
 terminal 1
 ```
-cd '/data/data/com.termux/files/usr' ; /data/data/com.termux/files/usr/bin/mariadbd-safe --datadir='/data/data/com.termux/files/usr/var/lib/mysql'
+mariadbd-safe --datadir='/data/data/com.termux/files/usr/var/lib/mysql'
 ```
 terminal 2 
 ```

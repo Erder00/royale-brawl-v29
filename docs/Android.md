@@ -21,7 +21,7 @@ mariadbd-safe --datadir='/data/data/com.termux/files/usr/var/lib/mysql'
 ```
 6: create new terminal sessions and run [mariadb-secure-installation](https://mariadb.com/kb/en/mariadb-secure-installation/)
 ```
-'/data/data/com.termux/files/usr/bin/mariadb-secure-installation'
+mariadb-secure-installation
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 

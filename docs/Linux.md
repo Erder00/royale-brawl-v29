@@ -54,7 +54,7 @@ edit the config file with your prefered text editor, for example vim:
 ```bash
 vim config.json
 ```
-change the `database_password` to the password you set, and the `database_name` to the database you created. also edit `BotToken` and `ChannelId` if you want to use the discord bot
+change the `mysql_password` to the password you set, and the `mysql_database` to the database you created. also edit `BotToken` and `ChannelId` if you want to use the discord bot
 
 finally run the server
 ```bash

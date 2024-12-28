@@ -4,7 +4,7 @@
 name: .NET
 on:
   push:
-      paths:
+    paths:
     - 'src/**'
   pull_request:
     paths:

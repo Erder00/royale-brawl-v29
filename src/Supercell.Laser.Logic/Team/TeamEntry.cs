@@ -124,7 +124,11 @@
                 request.Encode(stream);
             }
 
-            stream.WriteByte(2);
+            stream.WriteVInt(0); // Disabled Team Slots
+
+            stream.WriteBoolean(false);
+            stream.WriteBoolean(true); // Room Chat enabled
+            stream.WriteBoolean(false); // Accessories enabled
         }
     }
 }

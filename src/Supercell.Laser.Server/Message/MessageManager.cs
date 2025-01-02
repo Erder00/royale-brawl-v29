@@ -262,6 +262,9 @@ namespace Supercell.Laser.Server.Message
                     PlayerStatusReceived((PlayerStatusMessage)message);
                     ShowLobbyInfo();
                     break;
+                case 14367:
+                    TeamClearInviteMessageReceived((TeamClearInviteMessage)message);
+                    break;
                 case 14369:
                     TeamPremadeChatReceived((TeamPremadeChatMessage)message);
                     break;
@@ -906,6 +909,19 @@ namespace Supercell.Laser.Server.Message
                 teamInvitationMessage.FriendEntry = friendEntry;
 
                 gameListener.SendTCPMessage(teamInvitationMessage);
+            }
+        }
+
+        private void TeamClearInviteMessageReceived(TeamClearInviteMessage message)
+        {
+            TeamEntry team = GetTeam();
+            if (team == null) return;
+
+            TeamInviteEntry inviteToRemove = team.Invites.FirstOrDefault(invite => invite.Slot == message.Slot);
+            if (inviteToRemove != null)
+            {
+                team.Invites.Remove(inviteToRemove);
+                team.TeamUpdated();
             }
         }
 

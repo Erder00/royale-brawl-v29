@@ -7,6 +7,7 @@
         public override void Encode()
         {
             Stream.WriteVInt(ResponseType);
+            Stream.WriteVInt(1);
         }
 
         public override int GetMessageType()

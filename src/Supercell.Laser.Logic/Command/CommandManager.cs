@@ -11,6 +11,7 @@
         {
             CommandTypes = new Dictionary<int, Type>()
             {
+                {215, typeof(LogicSetSupportedCreatorCommand)},
                 {500, typeof(LogicGatchaCommand)},
                 {503, typeof(LogicClaimDailyRewardCommand)},
                 {505, typeof(LogicSetPlayerThumbnailCommand)},

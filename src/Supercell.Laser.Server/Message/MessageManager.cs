@@ -1,4 +1,4 @@
-namespace Supercell.Laser.Server.Message
+﻿namespace Supercell.Laser.Server.Message
 {
     using System.Diagnostics;
     using System.Linq;
@@ -288,6 +288,9 @@ namespace Supercell.Laser.Server.Message
                     break;
                 case 19001:
                     LatencyTestResultReceived((LatencyTestResultMessage)message);
+                    break;
+                case 23458:
+                    BattleLogMessageReceived((BattleLogMessage)message);
                     break;
                     //default:
                     //    Logger.Print($"MessageManager::ReceiveMessage - no case for {message.GetType().Name} ({message.GetMessageType()})");
@@ -2731,6 +2734,10 @@ namespace Supercell.Laser.Server.Message
                 }
             }
             Connection.Send(profileMessage);
+        }
+        private void BattleLogMessageReceived(BattleLogMessage message)
+        {
+            Connection.Send(message);
         }
 
         private void ChangeName(ChangeAvatarNameMessage message)

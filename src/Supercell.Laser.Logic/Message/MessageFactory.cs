@@ -51,6 +51,8 @@ namespace Supercell.Laser.Logic.Message
                 {14109, typeof(GoHomeFromOfflinePractiseMessage)},
                 {14110, typeof(AskForBattleEndMessage)},
                 {14113, typeof(GetPlayerProfileMessage)},
+                {14114, typeof(BattleLogMessage)},
+
                 {14166, typeof(ChronosEventSeenMessage)},
                 {14277, typeof(GetSeasonRewardsMessage)},
 

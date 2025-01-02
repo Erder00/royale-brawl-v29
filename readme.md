@@ -2,7 +2,7 @@
 
 A Brawl Stars private server for 29.258 based on royale Brawl
 
-## Download the client [here](https://mega.nz/file/T3gTxSQY#xER8enz0SggjF9bSWnDyqFne2MXiJCSg9zBywOga9gM)
+## Download the client [here](https://mega.nz/file/ajRBxSLC#AQHc3MEfuEf9NHBlDMKuFfM2p7wyCT5nq-Ex_Hn5gFg)
 ![Logo](https://github.com/Erder00/royale-brawl-v29/blob/main/docs/screenshots/lobby.png?raw=true)
 
 
@@ -60,7 +60,7 @@ How to install:
 [Linux](https://github.com/Erder00/royale-brawl-v29/blob/main/docs/Linux.md)
 [Windows](https://github.com/Erder00/royale-brawl-v29/blob/main/docs/Windows.md)
 
-then connect to the server using the [pre-made client](https://mega.nz/file/T3gTxSQY#xER8enz0SggjF9bSWnDyqFne2MXiJCSg9zBywOga9gM)
+then connect to the server using the [pre-made client](https://mega.nz/file/ajRBxSLC#AQHc3MEfuEf9NHBlDMKuFfM2p7wyCT5nq-Ex_Hn5gFg)
 
 decompile the apk and replace the ip in `lib/armeabi-v7a/liberder.script.so` with your own
 

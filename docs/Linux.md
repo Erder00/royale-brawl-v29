@@ -64,4 +64,4 @@ dotnet Supercell.Laser.Server.dll
 
 # other distros
 - on arch linux (which i personally use, btw) the mysql package is just not good, i found running a ubuntu container for mysql through [distrobox](https://distrobox.it) the best solution for me personally
-- in userland (i guess that counts as linux, right?) running dotnet will fail, adding `export DOTNET_GCHeapHardLimit=1C0000000` to your .bashrc or running it in the terminal should fix the issue
+- in userland or termux (i guess that counts as linux, right?) running dotnet will fail, adding `export DOTNET_GCHeapHardLimit=1C0000000` to your .bashrc or running it in the terminal should fix the issue

@@ -65,6 +65,7 @@ namespace Supercell.Laser.Logic.Message
                 {14308, typeof(LeaveAllianceMessage)},
                 {14315, typeof(ChatToAllianceStreamMessage)},
                 {14316, typeof(ChangeAllianceSettingsMessage)},
+                {14324, typeof(AllianceSearchMessage)},
                 {14330, typeof(SendAllianceMailMessage)},
 
                 {14350, typeof(TeamCreateMessage)},

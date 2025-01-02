@@ -6,6 +6,7 @@
     using Supercell.Laser.Logic.Club;
     using Supercell.Laser.Server.Database.Cache;
     using Supercell.Laser.Server.Settings;
+    using Supercell.Laser.Logic.Util;
 
     public static class Alliances
     {
@@ -215,6 +216,48 @@
                 return list;
             }
             #endregion
+        }
+        public static List<Alliance> GetRankingList(string searchValue, bool isHashtagSearch = false)
+        {
+            var list = new List<Alliance>();
+
+            try
+            {
+                using (var connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string query = isHashtagSearch
+                        ? "SELECT * FROM alliances WHERE `Id` = @searchValue ORDER BY `Trophies` DESC LIMIT 200"
+                        : "SELECT * FROM alliances WHERE `Name` LIKE @searchValue ORDER BY `Trophies` DESC LIMIT 200";
+
+                    using (var cmd = new MySqlCommand(query, connection))
+                    {
+                        if (isHashtagSearch)
+                        {
+                            long id = LogicLongCodeGenerator.ToId(searchValue);
+                            cmd.Parameters.AddWithValue("@searchValue", id);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@searchValue", "%" + searchValue + "%");
+                        }
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                list.Add(JsonConvert.DeserializeObject<Alliance>((string)reader["Data"]));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return list;
+            }
+            return list;
         }
     }
 }

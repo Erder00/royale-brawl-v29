@@ -224,6 +224,9 @@
                 case 14316:
                     ChangeAllianceSettingsReceived((ChangeAllianceSettingsMessage)message);
                     break;
+                case 14324:
+                    AllianceSearchReceived((AllianceSearchMessage)message);
+                    break;
                 case 14330:
                     SendAllianceMailMessage((SendAllianceMailMessage)message);
                     break;
@@ -741,6 +744,19 @@
             myAlliance.AllianceHeader = alliance.Header;
             Connection.Send(myAlliance);
         }
+
+        private void AllianceSearchReceived(AllianceSearchMessage message)
+        {
+            var list = new AllianceListMessage { query = message.SearchValue };
+
+            bool isHashtagSearch = message.SearchValue.StartsWith("#");
+            List<Alliance> alliances = Alliances.GetRankingList(message.SearchValue, isHashtagSearch);
+
+            list.clubs.AddRange(alliances);
+
+            Connection.Send(list);
+        }
+
         private void SendAllianceMailMessage(SendAllianceMailMessage message)
         {
             SendAllianceMailMessage sendAllianceMailMessage = message;

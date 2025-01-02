@@ -36,7 +36,7 @@ namespace Supercell.Laser.Logic.Message.Battle
                     Stream.WriteVInt(3); // PlayerID
                     Stream.WriteVInt(0); // IsStarPlayer (assuming 0 = false)
                     Stream.WriteBoolean(true); // IsStarPlayer
-                    Stream.WriteVInt(4); // Player Brawler
+                    Stream.WriteVInt(4); // Player Brawler SHOULD BE DATAREFERENCE TOO
                     Stream.WriteVInt(0); // BrawlerTrophies
                     Stream.WriteVInt(0); // BrawlerTrophiesForRank
                     Stream.WriteVInt(0); // BrawlerID

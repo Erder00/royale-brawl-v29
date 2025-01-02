@@ -43,10 +43,10 @@ CREATE TABLE `alliances` (
 --
 
 CREATE TABLE `users` (
-  `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
-  `username` VARCHAR(255) NOT NULL UNIQUE,
-  `password` VARCHAR(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `username` varchar(20) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Saved table indexes
@@ -63,6 +63,12 @@ ALTER TABLE `accounts`
 --
 ALTER TABLE `alliances`
   ADD UNIQUE KEY `Id` (`Id`);
+
+--
+-- Table indexes `users`
+--
+ALTER TABLE `users`
+  ADD UNIQUE KEY `id` (`id`);
 
 COMMIT;
 

@@ -2,8 +2,6 @@
 
 A Brawl Stars private server for 29.258 based on royale Brawl
 
-why did I create this server? because all public v29 servers suck
-
 ## Download the client [here](https://mega.nz/file/T3gTxSQY#xER8enz0SggjF9bSWnDyqFne2MXiJCSg9zBywOga9gM)
 ![Logo](https://github.com/Erder00/royale-brawl-v29/blob/main/docs/screenshots/lobby.png?raw=true)
 
@@ -77,4 +75,4 @@ decompile the apk and replace the ip in `lib/armeabi-v7a/liberder.script.so` wit
 - better anti-cheat (check csv shas and apk integrity in script, detect if battles are very short)
 - crypto
 - add more club commands
-- add creator codes
+

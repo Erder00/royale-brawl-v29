@@ -28,7 +28,7 @@
 
             Sha = Stream.ReadString(); // fingerprint sha
             DeviceId = Stream.ReadString(); // device
-            Stream.ReadVInt(); // int 17956864 then ISANDROID (maybe)
+            Stream.ReadVInt(); // int 17956864 = ISANDROID (maybe)
             DeviceLang = Stream.ReadVInt(); // lang id (0 for US)
             Stream.ReadString(); // full lang (en-US, de-DE, etc) NOT USED
 
